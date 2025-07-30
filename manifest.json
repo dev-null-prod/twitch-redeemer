@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Twitch Auto Redeemer",
+  "version": "1.0",
+  "description": "Automatically redeems Twitch channel point rewards every minute.",
+  "permissions": ["scripting", "tabs", "storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.twitch.tv/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
